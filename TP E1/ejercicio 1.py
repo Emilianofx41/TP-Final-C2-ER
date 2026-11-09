@@ -70,28 +70,29 @@ def generar_resumen_sensores():
 
 
 
+if __name__ == "__main__":
+    
+    for registro in sensores_raw:
+        registro_limpio = limpiar_registro_sensor(registro)
+        sensores_limpios.append(registro_limpio)
 
-for registro in sensores_raw:
-    registro_limpio = limpiar_registro_sensor(registro)
-    sensores_limpios.append(registro_limpio)
-
-lista_sensores_alerta, prom_temperaturas = generar_resumen_sensores()
+    lista_sensores_alerta, prom_temperaturas = generar_resumen_sensores()
 
 
-print("SISTEMA DE MONITOREO DE SENSORES DE TEMPERATURA")
-print("=================================")
-print("Listado de Sensores Recibidos")
-for sensores in sensores_raw:
-    print(sensores)
-print("=================================")
-print("Listado de Sensores Limpios")
-for sensores in sensores_limpios:
-    print(sensores)
-print("=================================")
-print("Temperatura promedio global de la planta: ", prom_temperaturas, "°C")
-print("=================================")
-print("Umbral establecido de alerta: ", umbral_temperatura, "°C")
-print("=================================")
-print("Sensores alertados por exceso de temperatura: ", lista_sensores_alerta)
-print("=================================")
-print("FINAL DEL PROGRAMA")
+    print("SISTEMA DE MONITOREO DE SENSORES DE TEMPERATURA")
+    print("=================================")
+    print("Listado de Sensores Recibidos")
+    for sensores in sensores_raw:
+        print(sensores)
+    print("=================================")
+    print("Listado de Sensores Limpios")
+    for sensores in sensores_limpios:
+        print(sensores)
+    print("=================================")
+    print("Temperatura promedio global de la planta: ", prom_temperaturas, "°C")
+    print("=================================")
+    print("Umbral establecido de alerta: ", umbral_temperatura, "°C")
+    print("=================================")
+    print("Sensores alertados por exceso de temperatura: ", lista_sensores_alerta)
+    print("=================================")
+    print("FINAL DEL PROGRAMA")
